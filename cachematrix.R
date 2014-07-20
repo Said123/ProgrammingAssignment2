@@ -38,6 +38,8 @@ cacheSolve <- function(x, ...) {
         message("getting cached inverse")
         return(invMat)
     }
+    #If the inverse is not cached, compute it with solve and store it using
+    #setInv
     data <- x$get()
     invMat <- solve(data, ...)
     x$setInv(invMat)
